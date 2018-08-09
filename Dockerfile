@@ -24,8 +24,7 @@ RUN rm -rf /var/cache/apk/*
 
 ENV PATH /DATA/bin:$PATH
 
-RUN sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php7/php.ini && \
-    sed -i "s/nginx:x:100:101:nginx:\\/var\\/lib\\/nginx:\\/sbin\\/nologin/nginx:x:100:101:nginx:\\/DATA:\\/bin\\/bash/g" /etc/passwd && \
+RUN sed -i "s/nginx:x:100:101:nginx:\\/var\\/lib\\/nginx:\\/sbin\\/nologin/nginx:x:100:101:nginx:\\/DATA:\\/bin\\/bash/g" /etc/passwd && \
     sed -i "s/nginx:x:100:101:nginx:\\/var\\/lib\\/nginx:\\/sbin\\/nologin/nginx:x:100:101:nginx:\\/DATA:\\/bin\\/bash/g" /etc/passwd-
 
 
