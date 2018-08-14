@@ -14,6 +14,21 @@ RUN echo 'http://dl-4.alpinelinux.org/alpine/latest-stable/main/' >> /etc/apk/re
     nginx \
     ca-certificates \
     openssh-client \
+    openssl \
+    ncurses \
+    coreutils \
+    python2 \
+    make \
+    gcc \
+    g++ \
+    libgcc \
+    linux-headers \
+    grep \
+    util-linux \
+    binutils \
+    findutils \
+    nodejs \
+    nodejs-npm \
     git \
     curl \
     rsync \
@@ -21,6 +36,10 @@ RUN echo 'http://dl-4.alpinelinux.org/alpine/latest-stable/main/' >> /etc/apk/re
     && apk --update --no-cache add tar
 RUN rm -rf /var/cache/apk/*
 
+# hadolint ignore=DL3016
+RUN npm install -g @vue/cli
+# hadolint ignore=DL3016
+RUN npm install -g @vue/cli-service-global
 
 ENV PATH /DATA/bin:$PATH
 
