@@ -40,6 +40,10 @@ RUN rm -rf /var/cache/apk/*
 RUN npm install -g @vue/cli
 # hadolint ignore=DL3016
 RUN npm install -g @vue/cli-service-global
+# hadolint ignore=DL3016
+RUN npm i -g npm
+# hadolint ignore=DL3016
+RUN npm install --global yarn
 
 ENV PATH /DATA/bin:$PATH
 
