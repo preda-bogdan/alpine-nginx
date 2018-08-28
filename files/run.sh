@@ -9,8 +9,6 @@ if [ ! -d /var/www/html ] ; then
 fi
 
 
-# start php-fpm
-mkdir -p /DATA/logs/php-fpm
 # start nginx
 mkdir -p /DATA/logs/nginx
 mkdir -p /tmp/nginx
